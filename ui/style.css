@@ -1,46 +1,55 @@
-body {
-    font-family: sans-serif;
-    margin-top: 60px;
+
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;}
+    }
+
+
+
+/* FOR INDEX PAGE*/
+  #section1 {
+	background-color: #168ccc;
+    color:#dedeff;
+	padding-top:50px;
+}
+#section2 {
+	background-color: #e5e5ef;
+    color:#686868;
+		padding-top:50px;
+}
+  
+#section3 {
+	background-color: #168ccc;
+    color:#ddd;
+		padding-top:50px;
 }
 
-.center {
-    text-align: center;
+#section4 {
+	background-color: #e5e5ef;;
+    color:#444;
+		padding-top:50px;
 }
-
-.text-big {
-    font-size: 300%;
+.bold{
+font-weight:bolder;
 }
-
-.bold {
-    font-weight: bold;
-}
-
-.img-medium {
-    height: 200px;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    color: #4a4a4a;
-    font-family: sans-serif;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.comment {
-    margin-left: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ccc;
-}
-
-.commenter {
-    font-style: italic;
-    font-size: 0.8em;
-}
-
-#comment_form {
-    margin-left: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ccc;
-}
+  
