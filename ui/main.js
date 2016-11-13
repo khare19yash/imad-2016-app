@@ -158,7 +158,7 @@ request.send();
 
 //GETTING NAME//
 
-var submitbtn=document.getElementById('submitbtn');
+var submitbtn=document.getElementById('registerbtn');
 submitbtn.onclick=function(){
 
 var request=new XMLHttpRequest();
