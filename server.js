@@ -1,4 +1,4 @@
-/*var express = require('express');
+var express = require('express');
 var app = express();
 var morgan = require('morgan');
 var crypto = require('crypto');
@@ -22,7 +22,7 @@ var config = {
   port:'5432'
 };
 
-//INDEX PAGE
+/*//INDEX PAGE
 app.get('/', function (req, res) {
 res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -121,7 +121,7 @@ app.get('/', function (req, res) {
 });
 
 
-function hash (input, salt) {
+/*function hash (input, salt) {
     // How do we create a hash?
     var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
     return ["pbkdf2", "10000", salt, hashed.toString('hex')].join('$');
@@ -215,9 +215,9 @@ app.get('/get-articles', function (req, res) {
           res.send(JSON.stringify(result.rows));
       }
    });
-});
+});*/
 
-app.get('/get-comments/:articleName', function (req, res) {
+/*app.get('/get-comments/:articleName', function (req, res) {
    // make a select request
    // return a response with the results
    pool.query('SELECT comment.*, "user".username FROM article, comment, "user" WHERE article.title = $1 AND article.id = comment.article_id AND comment.user_id = "user".id ORDER BY comment.timestamp DESC', [req.params.articleName], function (err, result) {
@@ -284,7 +284,7 @@ app.get('/ui/:fileName', function (req, res) {
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
   console.log(`IMAD course app listening on port ${port}!`);
-});
+});*/
 
 
 
