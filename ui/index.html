@@ -1,80 +1,277 @@
-<!doctype html>
-<html>
-<head>
-    <title>MY WEBAPP</title>
-    
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" type="text/css" href="/ui/style.css" >
-<link href="https://fonts.googleapis.com/css?family=Lobster|Six+Caps" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
 
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
 
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
+<!Doctype html>
+   <head>
+   <title>Blog Site:AAHEL GUHA</title>
    
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-});
-</script>
-</head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="ui/style.css">
+		<link rel="shortcut icon" href="ui/favicon.ico">
+		<link href="ui/css/bootstrap.min.css" rel="stylesheet">
+		<style>
+  .affix {
+      top: 0;
+      width: 100%;
+  }
+
+ .affix + .container-fluid {
+      padding-top: 70px;
+  }
+</style>
+    </head>
+
+
+
 <body>
-   
-   <div class="container">
-    <div id="navbar">
-        <ul id="menu">
-            <li class="nav"><a class="anchor" href="/">HOME</a></li>
-            <li class="nav"><a class="anchor" href="ui/articles.html">Articles</a></li>
-        <li class="nav"><a class="anchor" href="#loginpage">LOGIN/Register</a></li>
-        <!--<li class="nav"><a class="anchor" href="#loginpage">Contact Me</a></li>-->
-        </ul>
-        </div>
-        <img id="photo" src="/ui/myphoto.jpg" />
-        <div id="aboutme-l"><p id="detail">Name: SHUBHAM SINGH</p>
-                            <p id="detail">Age: 18years</p>
-                            <p id="detail">Gender: Male</p>
-                            <p id="detail">Hometown:Jaunpur,U.P.</p>
-                            <h4 id="detail">CONTACT ME:</h4>
-  <p id="detail">Ph. +919583945353</p>
-  <p id="detail">Email: shubhamsinghoriginal@gmail.com</p>
-  <p id="detail"><a href="http://www.facebook.com/shubhamsingh10/">Facebook</a></p>
-                            
-        </div>
-        <div id="aboutme-r"><h2 id="aboutme">About Me</h2><p id="aboutdetail"><strong>"Try not to become a man of success, but rather try to become a man of value"</strong></p><br>
-        <p id="mydetail">
-  <strong> I am Shubham Singh, currently pursuing B.Tech in Electronics & Communication Engineering at IIIT Bhubaneswar. A sports enthusiast who loves to play several outdoor games and always curious about the latest updates in the Indian sports. Loves to play high end computer games and watching movies, curious about the latest tech. updates.</strong>
-        </p>
-        </div>
-        </div>
-   <div id="loginpage">
-   <div id="login">
-   <span>USERNAME: </span><input type="text" id="username"> <br><br>
-   <span>PASSWORD:  </span><input type="password" id="password"> <br><br>
-<span><input type="submit" id="loginbtn" value="Login"></span><br><br><span><input type="submit" id="registerbtn" value="Register"></span><br><br><br><br><br>
+<!-- JUMBOTRON STARTS-->
+
+<div class="jumbotron"  style="background-color:#F44336;color:#fff;margin-top:-40px;">
+
+  <!--NAVBAR STARTS  -->
+       <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="0" style="z-index:1">
+            <div class="container-fluid">
+                     <button type="button" class="navbar-toggle"  data-toggle="collapse"  data-target=".navbar-collapse">
+                          <span class="sr-only">Toggle Navigation</span>
+                           <span class="icon-bar"></span>
+                           <span class="icon-bar"></span>
+                           <span class="icon-bar"></span>
+                      </button>
+            <a href="/" class="navbar-brand">AAHEL GUHA</a>
+
+                            <div class="navbar-collapse collapse">
+                                    <ul class="nav navbar-nav navbar-right">
+                                           <li id="Home"><a class="bold" href="/">HOME</a></li>
+                                               <li class="dropdown">
+                                                    <a class="dropdown-toggle bold" data-toggle="dropdown" href="#">ABOUT<span class="caret"></span></a>
+                                                                       <ul class="dropdown-menu">
+                                                                            <li><a class="bold" href="#section1">Academics</a></li>
+                                                                            <li><a class="bold"  href="#section2">Technical</a></li>
+                                                                            <li><a class="bold"  href="#section3">Extra activity</a></li>
+                                                                            <li><a class="bold"  href="#section4">personal</a></li>
+                                                                            <li><a class="bold"  href="#section5">Social</a></li>
+                                                                       </ul>
+                                                 </li>
+                                                                                       <li><a class="bold"  href="/blog">BLOG</a></li>     
+                                           <li>
+                                               <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>&nbsp;&nbsp;&nbsp;&nbsp;
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
 </div>
-<!--<h2 id="contact">CONTACT ADMIN:</h2>
-  <p id="contact">Ph. +919583945353</p>
-  <p id="contact">Email: shubhamsinghoriginal@gmail.com</p>
-  <p id="contact"><a href="http://www.facebook.com/shubhamsingh10/">Facebook</a></p>-->
-  </div>
-   <script type="text/javascript" src="/ui/main.js"></script>
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</li>
+                                           <li>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Register</button>
+
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" action="action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Register</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+    </div>
+  </form>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</li>
+                      
+
+
+
+                                        </ul>
+                            </div>
+               </div>
+        </nav>
+  <!--NAVBAR ENDS  -->
+  
+  
+  <div class="container">
+         <div class="row">
+            <div class="col-sm-4">
+                 <img class="img-circle" src="ui/images/inayat.jpg" width="200px" height="200px">
+            </div>
+		    <div class="col-sm-8">
+                   <h1>AAHEL GUHA</h1>
+                   <h4>Java/PHP Developer</h4>
+                    <h3>Hi!! I am Computer Science Professional. Besides the Information science I like to Write the articles and contents.Some of them is inspirating and learning.I hope you will like my articles.</h3>
+            </div>
+        </div> 
+	
+    </div>
+	  <br>  <br>  <br>  <br>  <br>
+            </div>
+
+  <!-- JUMBOTRON ENDS  -->
+    
+  <!-- SECTION 1  STARTS-->
+ <section class="container-fluid" id="section1">
+  	<h1 class="text-center v-center"><u>Academics</u></h1>
+  	<div class="row">
+    	<div class="col-sm-6 text-center">
+              <div class="row">
+          	      <div class="col-sm-10 col-sm-offset-1 text-center"><h2>Schooling</h2><h3>ST. STEPHEN'S SCHOOL</h3><img src="ui/images/school.png" width="150px" height="150px"></div>
+              </div>
+    	</div>
+              <div class="col-sm-6 text-center">
+                  <div class="row">
+          	  <div class="col-sm-10 text-center"><h2>Graduation</h2><h3>IIIT BHUBANESWAR</h3><img src="ui/images/college.png" width="150px" height="150px"></div>
+              </div>
+    	</div>
+  	</div>
+<br><br>
+</section>
+  <!--SECTTION 1 ENDS  -->
+ 
+  <!--SECTTION 2 SATRTS  -->
+<section class="container-fluid" id="section2">
+  	<h1 class="text-center v-center"><u>Technicals</u></h1>
+  	       <div class="row">
+    	        <div class="col-sm-3 text-center">
+                    <h2>Java Technology</h2><h4>Core Java,Servlet,JSP,Struts2</h4>
+		                <img src="ui/images/java.png" width="150" height="150">
+                </div>
+                <div class="col-sm-3 text-center">
+                    <h2>Web</h2><h4>HTML,PHP,BOOTSTRAP,CSS,<br>JavaScript</h4>
+		           <img src="ui/images/web.png" width="150" height="150">
+    	        </div>
+		        <div class="col-sm-3 text-center">
+                         <h2>Server & Databases</h2><h4>APACHE-TOMCAT, HTTP-SERVER ,Mysql, PhpMyadmin, MySql WorkBench, Postgres SQL</h4>
+     	                <img src="ui/images/server.png" width="150" height="150">
+		        </div>
+		        <div class="col-sm-3 text-center">
+                     <h2>IDE's</h2><h4>Eclipse, NetBeans</h4>
+		             <img src="ui/images/setting.png" width="150" height="150">
+                </div>
+		</div>
+	<br><br>
+</section>
+ <!--SECTTION 2 ENDS  -->
+ 
+ 
+ 
+  <!--SECTTION 3 STARTS  -->
+<section class="container-fluid" id="section3">
+  	   <h1 class="text-center v-center"><u>Extra Activities</u></h1>
+           	<div class="row">
+    	            <div class="col-sm-6 text-center">
+                         <h2>College Representative</h2><h4>E-cell IIT Mumbai</h4>
+		                       <img src="ui/images/iitm.png" width="150" height="150">
+                      </div>
+                    <div class="col-sm-6 text-center">
+                         <h2>Team Leader</h2><h4>TheSaviours(NGO)</h4>
+		                  <img src="ui/images/saviours.png" width="150" height="150">
+    	            </div>
+		</div>
+	<br><br>
+</section>
+ <!--SECTTION 3 ENDS  -->
+
+
+
+
+  <!--SECTTION 4 STARTS  -->
+<section class="container-fluid" id="section4">
+       	<h1 class="text-center v-center"><u>Personal</u></h1>
+  	                 <div class="row">
+    	                <div class="col-sm-6 text-center">
+                              <img src="ui/images/mail.png" width="150" height="150">
+		                      <h2>guha.aahel@yahoo.com</h2>
+                         </div>
+                     <div class="col-sm-6 text-center">
+		                    <img src="ui/images/phone.png" width="150" height="150">
+                             <h2>+919434506943</h2>
+		             </div>
+		             </div>
+<br><br>
+</section>
+ <!--SECTTION 4 ENDS  -->
+ 
+ 
+  <!--SECTTION 5 STARTS  -->
+<section class="container-fluid" id="section5">
+  	<h1 class="text-center v-center"><u>Social</u></h1>
+  	       <div class="row">
+    	           <div class="col-sm-3 text-center">
+                          <a href="https://www.facebook.com/people/Aahel-Guha/100010007624523"><img id="icn" src="ui/images/fb.PNG"></a>
+                  </div>
+                   <div class="col-sm-3 text-center">
+		                  <a href="https://twitter.com/iamaahel"><img id="icn" src="ui/images/twitter.PNG"></a>
+	               </div>
+		           <div class="col-sm-3 text-center">
+		                 <a href="https://in.linkedin.com/in/inayat-hussain-a456b6a7"><img id="icn" src="ui/images/lkn.PNG"></a>
+		            </div>
+		        <div class="col-sm-3 text-center">
+		            <a href="https://plus.google.com/109898089800964892399"><img id="icn" src="ui/images/gp.PNG"></a>
+		
+    	         </div>
+		</div>
+<br><br>
+</section>
+ <!--SECTTION 5 ENDS  -->
+ 
+<footer class=" navbar navbar-inverse">
+<span style="font-size:15px;color:silver;">Designed and Developed By- Aahel Guha || Contact:+919434506943</span>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="ui/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="ui/main.js"></script>
 </body>
 </html>
-
