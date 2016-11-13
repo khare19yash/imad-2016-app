@@ -197,7 +197,7 @@ pool.query("select article_tags.tag,articles.title,articles.content,articles.cat
  });
 
 
-//TEMPLATE CODE
+/*//TEMPLATE CODE
 
 function createTemplate(data){
 var title=data.title;
@@ -416,7 +416,7 @@ var template= `
 `;
 
 return template;
-}
+}*/
 
 
 
