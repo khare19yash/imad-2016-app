@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var morgan = require('morgan');
+var crypto = require('crypto');
 app.use(morgan('combined'));
 
 var http = require('http').Server(app);
@@ -423,3 +424,5 @@ var port = 8080; // Use 8080 for local development because you might already hav
 app.listen(8080, function () {
  console.log(`IMAD course app listening on port ${port}!`);
 });
+
+var crypto = require('crypto');
