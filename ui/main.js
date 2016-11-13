@@ -141,7 +141,7 @@ counterTxt.innerHTML= counter.toString();
 
 
 //TESTING WITH MYSELF of COUNTER:
-var btn=document.getElementById('ctrbtn');
+/*var btn=document.getElementById('ctrbtn');
 btn.onclick=function(){
 
 var request=new XMLHttpRequest();
@@ -154,11 +154,11 @@ document.getElementById('counterTxt').innerHTML=this.responseText;
 //request.open('GET',"http://itsinayats.imad.hasura-app.io/counter",true);
 request.open('GET',"http://localhost:8080/counter",true);
 request.send();
-}
+}*/
 
 //GETTING NAME//
 
-var submitbtn=document.getElementById('registerbtn');
+/*var submitbtn=document.getElementById('registerbtn');
 submitbtn.onclick=function(){
 
 var request=new XMLHttpRequest();
@@ -175,11 +175,31 @@ var ul=document.getElementById('namelist');
 ul.innerHTML=list;
 }
 }
-};
-var nameInput=document.getElementById('name');
+};*/
+/*var nameInput=document.getElementById('name');
 var name=nameInput.value;
 //request.open('GET','http://itsinayats.imad.hasura-app.io/submit_name?name='+name,true);
 request.open('GET','http://localhost:8080/submit_name?name='+name,true);
 request.send(null);
 
-};
+};*/
+
+
+var register = document.getElementById('registerbtn');
+    register.onclick = function () {
+        // Create a request object
+        var request = new XMLHttpRequest();
+        
+        // Capture the response and store it in a variable
+        request.onreadystatechange = function () {
+          if (request.readyState === XMLHttpRequest.DONE) {
+              // Take some action
+              if (request.status === 200) {
+                  alert('User created successfully');
+                  register.value = 'Registered!';
+              } else {
+                  alert('Could not register the user');
+                  register.value = 'Register';
+              }
+          }
+        };
