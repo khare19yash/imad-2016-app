@@ -26,6 +26,8 @@ app.get('/', function (req, res) {
 res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var pool = new Pool(config);
+
 //shubham server.js file
 
 function hash (input, salt) {
@@ -40,7 +42,7 @@ app.get('/hash/:input', function(req, res) {
    res.send(hashedString);
 });
 
-app.post('/create-user', function (req, res) {
+app.post('/', function (req, res) {
    // username, password
    // {"username": "tanmai", "password": "password"}
    // JSON
@@ -54,10 +56,10 @@ app.post('/create-user', function (req, res) {
       } else {
           res.send('User successfully created: ' + username);
       }
-   });
+   }); 
 });
 
-app.post('/login', function (req, res) {
+app.post('/', function (req, res) {
    var username = req.body.username;
    var password = req.body.password;
    
@@ -116,7 +118,7 @@ app.get('/logout', function (req, res) {
 
 //CONNECTION CREATION
 var pool=new Pool(config);
-app.get('/test-db', function (req, res) {
+app.get('/articles', function (req, res) {
     pool.query('select * from article',function(err,result){
         if(err)
         {
