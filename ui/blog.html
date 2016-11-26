@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="/ui/style.css">
  
-  		<style>
+  <style>
   		#leftCol{
   		    
-  		    z-index:1;
+  	z-index:1;
   
   		}
   .affix {
@@ -31,11 +31,16 @@ background:	#E6E6FA;
       
   }
 </style>
+
+
 </head>
+
+
+
 <body>
  <!--NAVBAR STARTS  -->
-    <nav class="navbar navbar-inverse" role="navigation" data-spy="affix" style="z-index:2">
-    <div class="navbar-header">
+      <nav class="navbar navbar-inverse" role="navigation" data-spy="affix" style="z-index:2">
+         <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
@@ -65,49 +70,47 @@ background:	#E6E6FA;
 </nav>
   <!--NAVBAR ENDS  -->
   
-       <div class="container-fluid">
-	  <div class="row">
-	  <!--left-->
-      <div class="col-md-3" id="leftCol">
-      <div class="nav nav-stacked affix s" style="position:fixed">
+      <div class="container-fluid">
+	        <div class="row">
+	             <!--left-->
+                        <div class="col-md-3" id="leftCol">
+                              <div class="nav nav-stacked affix s" style="position:fixed">
    
-      <button  data-toggle="collapse" data-target="#categories" id="catbtn" class=" btn btn-lg btn-info" style="width:300px;text-align:center;margin-top:50px">Categories</button>
+                                    <button  data-toggle="collapse" data-target="#categories" id="catbtn" class=" btn btn-lg btn-info" style="width:300px;text-align:center;margin-top:50px">Categories</button>
       
-      <div id="categories" class="collapse" style="Z-index:1">
-   <br> <img src="/ui/images/spinner.gif" width="100px" height="100px" style="margin-left:100px;">
-      </div>
-        </div>
-      </div><!--/left-->
-    
-      <div class="col-sm-9">
-    
-      <h4><small>Latest Post</small></h4>
-      <hr>
-      
-      <h1 id="heading"></h1>                      
-      <h4>
-          <span class="label label-info" id="category"></span>
-      </h4>
-          <h5>
-          <span id="author"></span>
-          <span id="time"></span>
-          </h5>
+                                             <div id="categories" class="collapse" style="Z-index:1">
+                                                    <br> <img src="/ui/images/spinner.gif" width="60px" height="60px" style="margin-left:100px;">
+                                              </div>
+                             </div>
+                       </div>
+              <!--/left-->
+<div id="articlePane">
+     <div class="col-sm-9">
+                    <div class="row text-center">
+                     <h4><small>LATEST POST</small></h4>
+                     </div>
+                             <hr>
+                                        <h1 id="heading"></h1>                      
+                     <h4>
+                     <span class="label label-primary" id="category"></span>
+                    </h4>
+                     <h5>
+                          <span id="author">...</span>
+                          <span id="time"></span>
+                     </h5>
           
-      <h5>
-          <span class="label label-success" id="tags"></span>
-       </h5>
+                      <h5>
+                         <span id="tags">...</span>
+                     </h5>
        <br><hr>
-      <p id="content">
-       <img src="/ui/images/spinner.gif" width="100px" height="100px" style="margin-left:450px;">
-       </p>
-<ul class="pager">
-  <li><a href="#">Previous</a></li>
-  <li><a href="#">Next</a></li>
-</ul>
+      <div id="content">
+                 <div class="col-sm-12 text-center"> <img src="/ui/images/spinner.gif" width="100px" height="100px"><p><strong>Loading...</strong><p></div>
+    
+       </div>
+            
       <hr>
-<!--
-      <h4>Leave a Comment:</h4>
-      
+<span id="leavecomment">  <h4>Please Login First To Leave a Comment!!</h4>
+  <!-- 
       <form role="form">
         <div class="form-group">
           <textarea class="form-control" rows="3" required></textarea>
@@ -116,7 +119,7 @@ background:	#E6E6FA;
       </form>
       <br><br>
       
-      <p><span class="badge">2</span> Comments:</p><br>
+      <p><span class="badge" id="total-comments">2</span> Comments:</p><br>
       
       <div class="row">
         <div class="col-sm-2 text-center">
@@ -152,86 +155,93 @@ background:	#E6E6FA;
 </div>
 
 
-
 -->
-
-
-<footer class="container-fluid navbar navbar-default navbar-bottom">
-          <b>Copyright&copy;INAYAT HUSSAIN</b>
-</footer>
-
+</span>
+ 
+</div>
+               
+</div>
+</div>
 
 
   <!-- LoginModal -->
   <div class="modal fade" id="loginModal" role="dialog">
-    <div class="modal-dialog">
+             <div class="modal-dialog">
     
 
       <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Login</h4>
-        </div>
-        <div class="modal-body">
-         <form>
-  <div class="form-group">
-    <label for="email">Email address:</label>
-    <input type="email" class="form-control" id="email">
-  </div>
-  <div class="form-group">
-    <label for="pwd">Password:</label>
-    <input type="password" class="form-control" id="pwd">
-  </div>
-  <div class="checkbox">
-    <label><input type="checkbox"> Remember me</label>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
+                        <div class="modal-content">
+                              <div class="modal-header">
+                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                         <h4 class="modal-title">Login</h4>
+                              </div>
+                                      <div class="modal-body">
+                                              <form>
+                                                  <div class="form-group">
+                                                           <label for="email">Email address:</label>
+                                                           <input type="email" class="form-control" id="email">
+                                                  </div>
+                                                  
+                                                   <div class="form-group">
+                                                         <label for="pwd">Password:</label>
+                                                        <input type="password" class="form-control" id="pwd">
+                                                   </div>
+                                                   
+                                                   <div class="checkbox">
+                                                   <label><input type="checkbox"> Remember me</label>
+                                                   </div>
+                                                   
+                                                  <button type="submit" class="btn btn-default">Submit</button>
+                                               </form>
+                                        </div>
+                                           <div class="modal-footer">
+                                           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                           </div>
+                        </div>
       
-    </div>
+              </div>
   </div>
   
      <!-- Register Modal -->
   <div class="modal fade" id="registerModal" role="dialog">
-    <div class="modal-dialog">
+         <div class="modal-dialog">
     
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Register</h4>
-        </div>
-        <div class="modal-body">
-       <form>
-  <div class="form-group">
-    <label for="email">Email address:</label>
-    <input type="email" class="form-control" id="email">
-  </div>
-  <div class="form-group">
-    <label for="pwd">Password:</label>
-    <input type="password" class="form-control" id="pwd">
-  </div>
-  <div class="checkbox">
-    <label><input type="checkbox"> Remember me</label>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
+                     <div class="modal-content">
+                         <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Register</h4>
+                         </div>
+                               <div class="modal-body">
+                                 <form>
+                                      <div class="form-group">
+                                               <label for="name">Full Name:</label>
+                                                   <input type="text" class="form-control" id="name">
+                                      </div>
+                                      <div class="form-group">
+                                               <label for="email">Email address:</label>
+                                                   <input type="text" class="form-control" id="email">
+                                      </div>
+                                      
+                                     <div class="form-group">
+                                             <label for="pwd">Password:</label>
+                                            <input type="password" class="form-control" id="password">
+                                     </div>
+                                     
+                                   <button type="button" class="btn btn-default" id="register_btn">Submit</button>
+                               </form>
+                           </div>
+                           <div class="modal-footer">
+                           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                           </div>
+                       </div>
       
+          </div>
     </div>
-  </div>
-  
-  
+
+          <footer class="container-fluid navbar navbar-inverse navbar-bottom" style="margin-top:200px">
+          <b>Copyright&copy;INAYAT HUSSAIN</b>
+          </footer>
+</div>
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
