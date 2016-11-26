@@ -29,27 +29,23 @@ function createTemplate (data) {
     var content = data.content;
     
     var htmlTemplate = `
-   <!doctype html>
+    <html>
 <head>
-    <title>${title}</title>
-    <link rel="stylesheet" type="text/css" href="/ui/all.css">
-<link href="https://fonts.googleapis.com/css?family=Lobster|Six+Caps" rel="stylesheet">
+    <title>Articles</title>
+    <link rel="stylesheet" type="text/css" href="/ui/blogstyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Shrikhand" rel="stylesheet">
 </head>
 <body>
-<div id="header">
-<h3 id="head">
+    <div id="header">
+        <span id="home"><a class="anchor" href="/">Home</a></span>
+        <span id="heading"><a href="/ui/myarticle.html">Article Valley</a></span>
+        <div id=< div id="userinfo">
+        </div>
+    </div>
+    <div id="list">
     
-    Explore Your Interests</h3>
-<ul><li class="nav"><a class="anchor" href="/">HOME</a></li></ul>
-<div id="userinfo">
-</div>
-</div>
-<div id="list">
-<ul>
-    
-</ul>
-</div>
-<div id="content">
+    </div>
+<div id="articlebody">
 ${content}
 <div id="comment_form">
     
@@ -58,12 +54,11 @@ ${content}
     
 </div>
 </div>
-
-
 <script type="text/javascript" src="/ui/article.js"></script>
-
 </body>
 </html>
+          
+      
     `;
     return htmlTemplate;
 }
@@ -152,7 +147,7 @@ app.get('/check-login', function (req, res) {
 
 app.get('/logout', function (req, res) {
    delete req.session.auth;
-   res.send('<http><head><meta http-equiv="Refresh" content="1; /"<h1>Logged Out</h1>' );
+   res.send('<http><head><meta http-equiv="Refresh" content="1; /"><h1>Logged Out</h1></head>');
 });
 
 var pool = new Pool(config);
@@ -213,7 +208,7 @@ app.post('/submit-comment/:articleName', function (req, res) {
 });
 
 app.get('/articles/:articleName', function (req, res) {
-  // SELECT * FROM article WHERE title = '\'; DELETE WHERE a = \'asdf'
+ 
   pool.query("SELECT * FROM article WHERE title = $1", [req.params.articleName], function (err, result) {
     if (err) {
         res.status(500).send(err.toString());
