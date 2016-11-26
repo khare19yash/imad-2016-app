@@ -33,22 +33,19 @@ res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 //CONNECTION CREATION
 var pool=new Pool(config);
 app.get('/test-db', function (req, res) {
-    pool.query('select * from articles',function(err,result){
+    pool.query('SELECT * FROM test-db',function(err,result){
         if(err)
         {
-          res.status(500).send(err.toString()) ;
+            res.ststus(500).send(err.toString());
         }
         else
         {
-          res.send(JSON.stringify(result.rows));  
+            res.send(JSON.stringify(result));
         }
     });
  
 });
 
-app.get('/test-db',function(req,res){
-    
-});
 
 //load blog
 app.get('/blog', function (req, res) {
