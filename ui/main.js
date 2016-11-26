@@ -1,13 +1,32 @@
-
 function changediv(user_name)
 {
+    var changedivtemp=`<h1> Hi `+user_name+` </h1><br><h1><a href="/logout"> Logout</a></h1>`;
+    document.getElementById('loginwindow').innerHTML=changedivtemp;
     
-    var divhtml="<h2>Hi,"+ user_name+"</h2> <br><h1><a href='/logout'>Logout</a></h1><br><br><br><br><br><br><br><br>";
-    document.getElementById("login").innerHTML= divhtml;
+}
+function loadLogin () {
+    // Check if the user is already logged in
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
+                loadLoggedInUser(this.responseText);
+                changediv(this.responseText);
+            } 
+        }
+    };
     
+    request.open('GET', '/check-login', true);
+    request.send(null);
+}
+function loadLoggedInUser (username) {
+    var user_name=username;
+    
+    alert(`Welcome ! `+user_name+` logged in Succesfully`);
 }
 function loadLoginForm () {
    
+    
     
     // Submit username/password to login
     var submit = document.getElementById('loginbtn');
@@ -38,14 +57,13 @@ function loadLoginForm () {
         // Make the request
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
-       
+        
         request.open('POST', '/login', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username: username, password: password}));  
-        submit.value = 'Wait...';
+        submit.value = 'Logging in...';
         
     };
-    
     
     var register = document.getElementById('registerbtn');
     register.onclick = function () {
@@ -69,40 +87,16 @@ function loadLoginForm () {
         // Make the request
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
-        
+        console.log(username);
+        console.log(password);
         request.open('POST', '/create-user', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username: username, password: password}));  
-        register.value = 'Wait...';
+        register.value = 'Registering...';
     
     };
 }
 
-function loadLoggedInUser (username) {
-    alert("Login Successful!\n\nWelcome "+username+"!");
-    changediv(username);
-}
 
-function loadLogin () {
-    // Check if the user is already logged in
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
-        if (request.readyState === XMLHttpRequest.DONE) {
-            if (request.status === 200) {
-                loadLoggedInUser(this.responseText);
-                
-            } 
-            
-        }
-    };
-    
-    request.open('GET', '/check-login', true);
-    request.send(null);
-}
-
-
-// The first thing to do is to check if the user is logged in!
-loadLogin();
-
-// Now this is something that we could have directly done on the server-side using templating too!
 loadLoginForm();
+loadLogin();
