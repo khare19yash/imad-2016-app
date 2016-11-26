@@ -54,7 +54,7 @@ font-weight:bolder;
 }
 
 #section6 {
-    background-image: url("/ui/images/bc.jpeg");
+    background-image: url("https://raw.githubusercontent.com/abhilashkasap/imad-2016-app/master/ui/bc.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 700px;
