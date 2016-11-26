@@ -1,15 +1,24 @@
+function changediv(user_name)
+{
+    var changedivtemp='<strong>Hi '+user_name+' !</strong>';
+    document.getElementById('userinfo').innerHTML=changedivtemp;
+    
+}
+
+
+
 function loadArticles () {
         // Check if the user is already logged in
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
-            var articles = document.getElementById('list');
+            var articles = document.getElementById('articlelist');
             if (request.status === 200) {
-                var content = '<ul>';
+                var content = '<ul class="ulist">';
                 var articleData = JSON.parse(this.responseText);
                 for (var i=0; i< articleData.length; i++) {
-                    content += `<li>
-                    <a class="editlist" href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
+                    content += `<li class="list">
+                    <a class="listanchor" href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
                     (${articleData[i].date.split('T')[0]})</li>`;
                 }
                 content += "</ul>";
@@ -28,7 +37,7 @@ var currentArticleTitle = window.location.pathname.split('/')[2];
 
 function loadCommentForm () {
     var commentFormHtml = `
-        <h5>Submit a comment</h5>
+        <h5>Submit a comment (You have to login before submitting a comment)</h5>
         <textarea id="comment_text" rows="5" cols="100" placeholder="Enter your comment here..."></textarea>
         <br/>
         <input type="submit" id="submit" value="Submit" />
@@ -73,7 +82,8 @@ function loadLogin () {
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
-                loadCommentForm(this.responseText);
+                
+                changediv(this.responseText);
             }
         }
     };
@@ -123,3 +133,4 @@ function loadComments () {
 // The first thing to do is to check if the user is logged in!
 loadLogin();
 loadComments();
+loadCommentForm();
