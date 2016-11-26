@@ -294,10 +294,6 @@ app.post('/create-user', function (req, res) {
 
 
 
-var port = 8080; // Use 8080 for local development because you might already have apache running on 80
-app.listen(8080, function () {
- console.log(`IMAD course app listening on port ${port}!`);
-});
 
 
 //abhilash server.js
@@ -371,3 +367,12 @@ app.get('/logout', function (req, res) {
    delete req.session.auth;
    res.send('<http><head><meta http-equiv="Refresh" content="1; /"><h1>Logged Out</h1></head>');
 });
+
+
+
+
+var port = 8080; // Use 8080 for local development because you might already have apache running on 80
+app.listen(8080, function () {
+ console.log(`IMAD course app listening on port ${port}!`);
+});
+
