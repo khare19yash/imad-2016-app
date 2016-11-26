@@ -255,7 +255,7 @@ function loadLoginForm () {
                   register.value = 'Register';
               }
           }*/
-        };*/
+     //   };*/
         
         // Make the request
         var username = document.getElementById('username').value;
