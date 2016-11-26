@@ -1,1 +1,170 @@
+#navbar
+{
+margin-top: -14px;
+height:50px;
+width:100%;
+text-align: center;
+position:fixed;
+margin-left:35px;
+}
+#menu
+{
+    padding-top: 10px;
+     font-family: 'Six Caps', sans-serif;
+font-family: 'Lobster', cursive;
+font-size:larger;
+    text-align: center;
+}
+.nav
+{
+    display: inline;
+    margin-left: 25px;
+    font-size: larger;
+    text-decoration: overline;
+        
+
+}
+.container
+{
+background-image: url("/ui/body.jpg");
+width:100%;
+height:700px;
+/*background-size: cover;*/
+background-repeat: no-repeat;
+margin-top:-20px;
+padding-top:5px;
+}
+body{
+    width:100%;
+    margin-left:-4px;
+    margin-right:-4px;
+    margin-top:-4px;
+}
+.nav:hover{
+    text-decoration: underline;
+}
+.anchor{
+    color: black;
+}
+#loginpage
+{
+    background-image: url("/ui/31_white_abstract.jpg");
+    width:auto;
+height:475px;
+/*background-size: cover;*/
+text-align: center;
+padding-top: 150px;
+
+}
+
+#loginbtn
+{
+    background-color: none;
+    border-radius: 5px;
+     font-family: 'Six Caps', sans-serif;
+font-family: 'Lobster', cursive;
+    font-size: larger;
+    text-decoration: overline;
+}
+#loginbtn:hover{
+    text-decoration: underline;
+    background-color: black;
+    color:antiquewhite;
+}
+#contact{
+     font-family: 'Six Caps', sans-serif;
+font-family: 'Lobster', cursive;
+    font-size: larger;
+    text-decoration: underline;
+    text-align: center;
+}
+#registerbtn
+{
+    background-color: none;
+    border-radius: 5px;
+     font-family: 'Six Caps', sans-serif;
+font-family: 'Lobster', cursive;
+    font-size: larger;
+    text-decoration: overline;
+}
+#registerbtn:hover{
+    text-decoration: underline;
+    background-color: black;
+    color:antiquewhite;
+}
+#aboutme-r{
+ height:650px;
+ width:75.45%;
+margin-top: -875px;
+ margin-left: 210px;
+position:absolute;
+  
+font-family: 'Six Caps', sans-serif;
+font-family: 'Lobster', cursive;
+
+}
+#aboutme-l{
+   height:700px;
+     width:230px;
+position:relative;
+     /*background-color: whitesmoke;*/
+     /*margin-top: 65px;
+     margin-left: -25px;*/
+ text-align: center;
+     font-family: 'Six Caps', sans-serif;
+     font-family: 'Lobster', cursive;
+     margin-top:-10px;
+     }
+   #detail
+   {
+       padding-top:10px;
+       
+   }
+   #photo
+   {
+       border:solid thick;
+       border-radius:20px;
+       margin-left: 10px;
+       margin-top: 45px;
+    width:190px;
+    height:170px;
+   }
+   #aboutme{
+      margin-top:60px;
+      text-align:center;
+      margin-left:-7px;
+   }
+   #aboutdetail{
+text-align: center;
+       font-size:25px;
+          font-family: 'Bad Script', cursive;
+width:inherit: max-content;
+margin-left:20px;
+color:black;
+margin-top:60px;
+   }
+   #mydetail{
+       
+       font-family: 'Bad Script', cursive;
+       font-size: 20px;
+       width:inherit: max-content;
+      margin-left:60px;
+      color:black;
+      margin-top:50px;
+   }
+#cv
+  {
+      text-decoration: overline;
+      margin-left: 400px;
+      height:20px;
+      width:70px;
+      text-align: center;
+      background-color: darkgrey;
+      border: 10px,thick,black;
+  }
+  #cv:hover{
+    text-decoration: underline;
+    
+    color:antiquewhite;
+  }
 
