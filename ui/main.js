@@ -156,7 +156,7 @@ request.send();
 
 //GETTING NAME//
 
-var submitbtn=document.getElementById('submitbtn');
+/*var submitbtn=document.getElementById('submitbtn');
 submitbtn.onclick=function(){
 
 var request=new XMLHttpRequest();
@@ -180,7 +180,7 @@ var name=nameInput.value;
 request.open('GET','http://localhost:8080/submit_name?name='+name,true);
 request.send(null);
 
-};
+};*/
 
 
 
