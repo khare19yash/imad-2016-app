@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="/ui/readroom.css" rel="stylesheet" />
+
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.deep_purple-blue.min.css" />
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+
+
+  <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+
+  <script src="/ui/readroomjquery.min.js"></script>
+  <script src="/ui/readroomscript.js"></script>
+
+
+
+
+</head>
+<body>
+  <!-- Always shows a header, even in smaller screens. -->
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+   <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+          <a class="mdl-navigation__link" href="/"><h6>Home</h6></a>
+          <a class="mdl-navigation__link" href="/login"><h6>Blog</h6></a>
+          <a class="mdl-navigation__link" href="/publish-article"><h6>Publish Article</h6></a>
+          <a class="mdl-navigation__link" href="/readroom"><h6>Read Room</h6></a>
+      </nav>
+    </div>
+  </header>
+  <main class="mdl-layout__content">
+      <div>
+      <i class="fa fa-quote-left fa-2x fa-pull-left fa-border" aria-hidden="true"></i> 
+      <div>
+        <h4>... if you only read the books that everyone else is reading, you can only think what everyone else is thinking. </h4> <br>
+        
+      </div>
+      </div>
+      <div id="heading" >
+          <h4>Welcome to ReadRoom! Explore <img src="https://www.amigos.org/sites/default/files/ny_times_logo.jpg"/>Best Seller List by Categories!</h4>
+        </div>
+
+      <div class="mdl-grid">
+      <!--<div class="mdl-cell mdl-cell--1-col"></div> -->
+        <div class="mdl-cell mdl-cell--4-col">
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="loadData()">
+            Explore Categories
+          </button>
+          <div class="demo-card-wide mdl-card1 mdl-shadow--2dp">
+
+
+            <div class="mdl-card__actions mdl-card1--border">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                Categories
+              </a>
+
+              <ul class="demo-list-item mdl-list" id="categories-element">
+            <!--<li class="mdl-list__item">
+              <span class="mdl-list__item-primary-content">
+                Sports
+              </span>
+            </li> -->
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+
+    
+    <div class="mdl-cell mdl-cell--8-col">
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--8-col">
+          <form action="#">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" id="books">
+              <label class="mdl-textfield__label" for="sample3">Enter Category name</label>
+            </div>
+          </form>
+
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="loadBooks()">
+            Get Books
+          </button>
+        </div>
+      </div>
+      <div id="books-links"> 
+
+
+
+
+      </div>
+
+    </div>
+
+    <!--<div class="mdl-cell mdl-cell--1-col"></div> -->
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+<footer class="mdl-mini-footer">
+  <div class="mdl-mini-footer__left-section">
+    <div class="mdl-logo">
+      <h6>Application developed as part of IMAD </h6>
+    </div>
+  </div>
+
+  <div class="mdl-mini-footer__right-section">
+
+    <ul class="mdl-mini-footer__link-list">
+      <li> <h5><a href="https://www.hackerearth.com/@sumant2" target="_blank"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></h5></li>
+
+      <li> <h5><a href="https://www.hackerearth.com/@sumant2" target="_blank"><i class="fa fa-header fa-lg"></i></a></h5></li>
+      <li><h5><a href="https://github.com/Subway19" target="_blank"><i class="fa fa-github fa-lg"></i></a></h5></li>
+      <li>  <h5><a href="https://www.facebook.com/sumantbagade19" target="_blank"><i class="fa fa-facebook fa-lg"></i></a></h5>
+      </li>
+    </ul>
+
+  </div>
+</footer>
+</main>
+</div>
+</body>
+</html>
