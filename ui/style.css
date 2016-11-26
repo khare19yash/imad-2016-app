@@ -1,183 +1,175 @@
-#navbar {
-    margin-top: -15px;
-    margin-left: -8px;
-    margin-right: 0px;
-    width: 100%;
-    height: 90px;
-    padding-top: 15px;
+#leftfloat {
+    height: 100%;
+    width: 250px;
+    border-right: thick solid black;
+    padding-top: 20px;
 }
 
-#newlist {
-    padding-left: 190px;
-    margin-top: -5px;
+#header {
+    height: 130px;
+    text-align: center;
+    border-bottom: thick solid black;
+}
+
+body {
+    margin-right: -4px;
+}
+
+#articleplace {
+    margin-left: 300px;
+    margin-top: -635px;
+    margin-right: 20px;
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    width: 550px;
+}
+
+.container {
+    background-color: darkgray;
+    background-image: url("/ui/myimg.jpg");
+    background-size: cover;
+    height: 850px;
+    width: 100%;
+}
+
+
+#navbar {
+    margin-top: -8px;
+    margin-left: -6px;
+    margin-right: 0;
+    height: 90px;
+    width: 100%;
+    padding-top: 0;
+    text-align: left;
+    padding-top: 6px;
+}
+
+#menulist {
     display: inline;
     position: fixed;
     list-style-type: none;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 50px;
+    font-size: 24;
+    text-align: center;
 }
 
 .nav {
     display: inline;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
-.nav:hover {
-    text-decoration: underline overline;
-    font-size: 60px;
-}
 
-.container {
-    background-image: url("/ui/trees.jpg");
-    background-size: cover;
-    height: 700px;
-    width: 101.35%;
-    background-repeat: no-repeat;
-    margin-left: -10px;
-}
 
 #loginpage {
-    background-image: url("/ui/free-brown-background-wallpaper-1.jpg");
+    background-image: url("/ui/bc.jpeg");
     background-size: cover;
-    height: 700px;
-    width: 101.35%;
     background-repeat: no-repeat;
-    margin-left: -10px;
-}
-
-#contactpage {
-    background-image: url("/ui/Brown-Backgrounds.jpg");
-    background-size: cover;
     height: 700px;
-    width: 101.35%;
-    background-repeat: no-repeat;
-    margin-left: -10px;
-}
-
-#loginwindow {
-    margin-left: 420px;
-    margin-top: 220px;
-    background-color: burlywood;
-    height: 260px;
-    width: 500px;
-    border: solid thick black;
-    position: absolute;
-    text-align: center;
-    font-family: sans-serif;
-    font-size: 20px;
-    border-bottom-left-radius: 40px;
-    border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
-    border-top-left-radius: 40px;
-}
-
-#contactinfo {
-    margin-left: 225px;
-    margin-top: 210px;
-    background-color: burlywood;
-    height: 300px;
-    width: 500px;
-    border: solid thick black;
-    position: absolute;
-    text-align: center;
-    font-family: sans-serif;
-    font-size: 20px;
-    border-bottom-left-radius: 60px;
-    border-top-right-radius: 60px;
-    border-bottom-right-radius: 60px;
-    border-top-left-radius: 60px;
-}
-
-#contactimg {
-    margin-left: 820px;
-    margin-top: 210px;
-    height: 300px;
-    width: 300px;
-    border: solid thick black;
-    border-bottom-left-radius: 30px;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-    border-top-left-radius: 30px;
+    width: 100%;
 }
 
 .anchor {
-    color: black;
+    color: white;
     text-decoration: none;
+    
+    
+}
+.anchor:hover
+{
+    color:blue;
+    text-decoration:overline;
+}
+
+#loginwindow {
+    margin-left: 75px;
+    margin-top: 275px;
+    background-color: transparent;
+    height: 250px;
+    width: 500px;
+    border: solid thick grey;
+    position: absolute;
+    padding-top: 50px;
+    padding-left: 20px;
+    text-align: center;
+    font-size: 17;
+}
+
+.loginw {
+    position: absolute;
+    font-size: 16;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
 }
 
 #loginbtn {
-    background-color: lightslategrey;
-    font-size: 20px;
-    border-bottom-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-top-left-radius: 10px;
+    background-color: darkslategray;
+    font-size: 15;
+    height: 35px;
+    width: 70px;
+    border-radius: 8px;
 }
 
 #registerbtn {
-    background-color: lightslategray;
-    font-size: 20px;
-    border-bottom-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-top-left-radius: 10px;
-}
-
-#loginbtn:hover {
-    background-color: linen;
-    font-size: 30px;
-    height: 50px;
-    width: 150px;
+    background-color: indianred;
+    font-size: 15;
+    height: 35px;
+    width: 125px;
+    border-radius: 8px;
 }
 
 #registerbtn:hover {
-    background-color: linen;
-    font-size: 30px;
+    background-color: whitesmoke;
+    font-size: 30;
     height: 50px;
     width: 150px;
 }
-#aboutme {
-    margin-left: 700px;
-    margin-top: 15px;
-    border: solid thin black;
-    height: 450px;
-    width: 550px;
+
+#loginbtn:hover {
+    background-color: whitesmoke;
+    font-size: 30;
+    height: 50px;
+    width: 150px;
+}
+
+#loginimg {
     position: absolute;
-    text-align: left;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
-    border-bottom-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-top-left-radius: 10px;
-    padding: 10px;
-    font-family: 'Cabin', sans-serif;
+    height: 300px;
+    width: 300px;
+    margin-top: 270px;
+    margin-left: 800px;
 }
-#abouttag
-{
-    margin-left: 30px;
-    margin-top: -8px;
+
+#contactme {
+    background-color:bisque;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 700px;
+    width: 100%;
 }
-#quote
-{
-    margin-left: 30px;
-    font-family: 'Amatic SC', cursive;
-    font-size: 40px;
+#address {
+    position: absolute;
+    color: azure;
+    font-family: monospace;
+    margin-left: 350px;
+    margin-top: 200px;
+    font-size: 30px;
 }
-#myphoto
-{
-    margin-left: 60px;
-    margin-top: 60px;
-    height: 360px;
-    width: 480px;
-    border: solid thick black;
-    border-bottom-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 20px;
+#authorinfo {
+    display: inline-block;
+    width: 600px;
+    height: 600px;
+    margin-top: 80px;
+    background-color: gray;
+    border-radius: 10%;
+    margin-left: 15px;
+    
+    
+    opacity: 0.65;
 }
-#knowme
-{   
-    margin-top: -30px;
-    margin-left:200px;
+#text {
+    font-size: 25px;
+    margin-left: 0;
+    margin-top: 30px;
+    text-align: center;
+    font-family:'Special Elite', cursive;
 }
