@@ -1,119 +1,40 @@
+.demo-card-wide.mdl-card {
+  width: 812px;
 
-    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-    .row.content {height: 1500px}
-    
-    /* Set gray background color and 100% height */
-    .sidenav {
-      background-color: #f1f1f1;
-      height: 100%;
-    }
-    
-    /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
-    
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 15px;
-      }
-      .row.content {height: auto;}
-    }
+  margin:0 auto;
 
-
-
-/* FOR INDEX PAGE*/
-  #section1 {
-	background-color: #168ccc;
-    color:#dedeff;
-	padding-top:50px;
+  background-color: #F6F6F6;
 }
-#section2 {
-	background-color: #e5e5ef;
-    color:#686868;
-		padding-top:50px;
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background:'/ui/against.jpg';
 }
-  
-#section3 {
-	background-color: #168ccc;
-    color:#ddd;
-		padding-top:50px;
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
 }
 
-#section4 {
-	background-color: #e5e5ef;;
-    color:#444;
-		padding-top:50px;
-}
-.bold{
-font-weight:bolder;
+#user-image{
+	width:100%;
+	height:100%;
 }
 
-#section6 {
-    background-color: #168ccc;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 700px;
-    width: 100%;
-}
-#loginwindow {
-    margin-left: 75px;
-    margin-top: 275px;
-    background-color: transparent;
-    height: 250px;
-    width: 500px;
-    border: solid thick grey;
-    position: absolute;
-    padding-top: 50px;
-    padding-left: 20px;
-    text-align: center;
-    font-size: 17;
+img{
+	width:100%;
+	height:100%;
 }
 
-.loginw {
-    position: absolute;
-    font-size: 16;
-    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+#introvert, #reading{
+	width:70%;
+	height:80%;
+
 }
 
-#loginbtn {
-    background-color: darkslategray;
-    font-size: 15;
-    height: 35px;
-    width: 70px;
-    border-radius: 8px;
+#gerrard{
+
+	height: 30%;
+	width : 100%;
 }
 
-#registerbtn {
-    background-color: indianred;
-    font-size: 15;
-    height: 35px;
-    width: 125px;
-    border-radius: 8px;
-}
 
-#registerbtn:hover {
-    background-color: whitesmoke;
-    font-size: 30;
-    height: 50px;
-    width: 150px;
-}
 
-#loginbtn:hover {
-    background-color: whitesmoke;
-    font-size: 30;
-    height: 50px;
-    width: 150px;
-}
-
-#loginimg {
-    position: absolute;
-    height: 300px;
-    width: 300px;
-    margin-top: 270px;
-    margin-left: 800px;
-}
