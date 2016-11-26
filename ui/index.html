@@ -219,12 +219,13 @@
  
  <script>
   function myFunction () {
-      alert('Could not register the user');
+     
         // Create a request object
-        /*var request = new XMLHttpRequest();
+        var request = new XMLHttpRequest();
         
         // Capture the response and store it in a variable
         request.onreadystatechange = function () {
+             alert('Could not register the user');
           if (request.readyState === XMLHttpRequest.DONE) {
               // Take some action
               if (request.status === 200) {
@@ -234,7 +235,7 @@
                   alert('Could not register the user');
                   register.value = 'Register';
               }
-          }*/
+          }
         };
      
  </script>
