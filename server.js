@@ -144,7 +144,7 @@ res.sendFile(path.join(__dirname, 'ui/images' , 'gl.jpg'));
 
 
 
-//getting categories
+/*//getting categories
 app.get('/get-categories', function (req, res) {
    pool.query('select * from category', function (err, result) {
       if (err) {
@@ -286,7 +286,7 @@ app.post('/create-user', function (req, res) {
           res.send('User successfully created: ' + username);
       }
    });
-});
+});*/
 
 
 
