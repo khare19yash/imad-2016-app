@@ -209,7 +209,27 @@
         <div id="loginwindow">
             <span>Username :</span><input type="text" id="username"><br> <br>
             <span>Password :</span><input type="password" id="password"><br><br>
-            <span><input type="submit" value="Login" id="loginbtn" >      <span><input type="submit" value="Register" id="registerbtn" onclick="alert('hh')"></span>
+            <span><input type="submit" value="Login" id="loginbtn" >      <span><input type="submit" value="Register" id="registerbtn" onclick="<script>
+  function myFunction () {
+        alert("hi");
+        // Create a request object
+        /*var request = new XMLHttpRequest();
+        
+        // Capture the response and store it in a variable
+        request.onreadystatechange = function () {
+          if (request.readyState === XMLHttpRequest.DONE) {
+              // Take some action
+              if (request.status === 200) {
+                  alert('User created successfully');
+                  register.value = 'Registered!';
+              } else {
+                  alert('Could not register the user');
+                  register.value = 'Register';
+              }
+          }*/
+        };
+     
+ </script>"></span>
             
         </div>
         <img id="loginimg" src="/ui/log.jpg">
