@@ -11,7 +11,7 @@ var http = require('http').Server(app);
 
 
 var path = require('path');
-//var Pool = require('pg').Pool;
+var Pool = require('pg').Pool;
 
 
 
