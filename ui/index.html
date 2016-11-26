@@ -1,1 +1,87 @@
-THIS IS INDEX
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+        Home
+    </title>
+    <link rel="stylesheet" type="text/css" href="/ui/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Add smooth scrolling to all links
+            $("a").on('click', function(event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 600, function() {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
+   
+</head>
+
+<body>
+    <div class="container">
+        <div id="navbar">
+            <ul id="menulist">
+                <li class="nav"><a class="anchor" href="/">Home</a></li>
+                <li class="nav"><a class="anchor" href="/ui/blogtemp.html">MyBlog</a></li>
+                <li class="nav"><a class="anchor" href="#contactme">Contact Me</a></li>
+                <li class="nav"><a class="anchor" href="#loginpage">Login/Register</a></li>
+            </ul>
+        </div>
+        <div id="authorinfo">
+            <div id="text">
+                <span> <strong>Hi, I am Abhilash</strong></span>
+                <p>An engineering student of Computer Science<br>engineering branch at IIIT Bhubaneswar.<br> Other than technical stuffs I love poetry<br>Drama, Indian culture etc.<br>There are many things to say<br>but one word which describes me is "CAPRICIOUS"
+                </p>
+             <img src="/ui/poem.png">
+             <br>
+             <br>
+             <span>Here goes my <a class="anchor" href="https://drive.google.com/open?id=0B-DtLu9GXoe2blA2Y2pDNUpYTVk" target="_blank" >My CV</a></span>
+
+
+            </div>
+
+            </div>
+    </div>
+    <div id="loginpage">
+
+        <div id="loginwindow">
+            <span>Username :</span><input type="text" id="username"><br> <br>
+            <span>Password :</span><input type="password" id="password"><br><br>
+            <span><input type="submit" value="Login" id="loginbtn" >      <span><input type="submit" value="Register" id="registerbtn"></span>
+            
+        </div>
+        <img id="loginimg" src="/ui/log.jpg">
+    </div>
+    <div id="contactme">
+        <div id="address">
+            <h2 style="text-decoration:underline"> Contact Me</h2>
+            <p style="color:black"> Abhilash Bhardwaj </p>
+            <p style="color:black">abhilashbhardwaj.kasap@gmail.com</p>
+            <p style="color:black"> Contact me on <a class="anchor" href="http://wwww.facebook.com/abhilashbhardwaj.kasap" target="_blank">Facebook </a></p>
+
+        </div>
+    </div>
+     <script type="text/javascript" src="/ui/main.js"></script>
+</body>
+
+</html>

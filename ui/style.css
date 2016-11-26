@@ -1,0 +1,177 @@
+
+
+#leftfloat {
+    height: 100%;
+    width: 250px;
+    border-right: thick solid black;
+    padding-top: 20px;
+}
+
+#header {
+    height: 130px;
+    text-align: center;
+    border-bottom: thick solid black;
+}
+
+body {
+    margin-right: -4px;
+}
+
+#articleplace {
+    margin-left: 300px;
+    margin-top: -635px;
+    margin-right: 20px;
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    width: 550px;
+}
+
+.container {
+    background-color: darkgray;
+    background-image: url("/ui/myimg.jpg");
+    background-size: cover;
+    height: 850px;
+    width: 100%;
+}
+
+
+#navbar {
+    margin-top: -8px;
+    margin-left: -6px;
+    margin-right: 0;
+    height: 90px;
+    width: 100%;
+    padding-top: 0;
+    text-align: left;
+    padding-top: 6px;
+}
+
+#menulist {
+    display: inline;
+    position: fixed;
+    list-style-type: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24;
+    text-align: center;
+}
+
+.nav {
+    display: inline;
+    margin-left: 30px;
+}
+
+
+
+#loginpage {
+    background-image: url("/ui/bc.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 700px;
+    width: 100%;
+}
+
+.anchor {
+    color: white;
+    text-decoration: none;
+    
+    
+}
+.anchor:hover
+{
+    color:blue;
+    text-decoration:overline;
+}
+
+#loginwindow {
+    margin-left: 75px;
+    margin-top: 275px;
+    background-color: transparent;
+    height: 250px;
+    width: 500px;
+    border: solid thick grey;
+    position: absolute;
+    padding-top: 50px;
+    padding-left: 20px;
+    text-align: center;
+    font-size: 17;
+}
+
+.loginw {
+    position: absolute;
+    font-size: 16;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+
+#loginbtn {
+    background-color: darkslategray;
+    font-size: 15;
+    height: 35px;
+    width: 70px;
+    border-radius: 8px;
+}
+
+#registerbtn {
+    background-color: indianred;
+    font-size: 15;
+    height: 35px;
+    width: 125px;
+    border-radius: 8px;
+}
+
+#registerbtn:hover {
+    background-color: whitesmoke;
+    font-size: 30;
+    height: 50px;
+    width: 150px;
+}
+
+#loginbtn:hover {
+    background-color: whitesmoke;
+    font-size: 30;
+    height: 50px;
+    width: 150px;
+}
+
+#loginimg {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    margin-top: 270px;
+    margin-left: 800px;
+}
+
+#contactme {
+    background-color:bisque;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 700px;
+    width: 100%;
+}
+#address {
+    position: absolute;
+    color: azure;
+    font-family: monospace;
+    margin-left: 350px;
+    margin-top: 200px;
+    font-size: 30px;
+}
+#authorinfo {
+    display: inline-block;
+    width: 600px;
+    height: 600px;
+    margin-top: 80px;
+    background-color: gray;
+    border-radius: 10%;
+    margin-left: 15px;
+    
+    
+    opacity: 0.65;
+}
+#text {
+    font-size: 25px;
+    margin-left: 0;
+    margin-top: 30px;
+    text-align: center;
+    font-family:'Special Elite', cursive;
+}
