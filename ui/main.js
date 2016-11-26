@@ -4,26 +4,8 @@ function changediv(user_name)
     document.getElementById('loginwindow').innerHTML=changedivtemp;
     
 }
-function loadLogin () {
-    // Check if the user is already logged in
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
-        if (request.readyState === XMLHttpRequest.DONE) {
-            if (request.status === 200) {
-                loadLoggedInUser(this.responseText);
-                changediv(this.responseText);
-            } 
-        }
-    };
-    
-    request.open('GET', '/check-login', true);
-    request.send(null);
-}
-function loadLoggedInUser (username) {
-    var user_name=username;
-    
-    alert(`Welcome ! `+user_name+` logged in Succesfully`);
-}
+
+
 function loadLoginForm () {
    
     
@@ -96,7 +78,26 @@ function loadLoginForm () {
     
     };
 }
+function loadLoggedInUser (username) {
+    var user_name=username;
+    
+    alert(`Welcome ! `+user_name+` is now logged in`);
+}
+function loadLogin () {
+    // Check if the user is already logged in
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
+                loadLoggedInUser(this.responseText);
+                changediv(this.responseText);
+            }
+        }
+    };
+    
+    request.open('GET', '/check-login', true);
+    request.send(null);
+}
 
-
-loadLoginForm();
 loadLogin();
+loadLoginForm();
