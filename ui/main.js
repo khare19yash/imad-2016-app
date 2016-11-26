@@ -87,7 +87,6 @@ element.innerHTML= '<br>c1-20,Shashtri nagar ,Ghaziabad(201202)';
 
 //MOve MY PROFILE PIC
 /*
-
 var img= document.getElementById('imgi');
 var rad=0;
 function makebig(){
@@ -112,9 +111,7 @@ var counter=0;
 button.onclick=function(){
 counter++;
 counterTxt.innerHTML= counter.toString();
-
 }
-
 */
 /*
 //AJAX HTTP_REQUEST
@@ -138,7 +135,6 @@ counterTxt.innerHTML= counter.toString();
  request.open('GET','http://itsinayats.imad.hasura-app.io//counter',true);
  request.send(null);
  };
-
 */
 
 
@@ -185,7 +181,6 @@ request.open('GET','http://localhost:8080/submit_name?name='+name,true);
 request.send(null);
 
 };
-
 
 
 
