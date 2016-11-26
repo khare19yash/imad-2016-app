@@ -236,9 +236,9 @@ function loadLoginForm () {
         
     };
     
-    var register = document.getElementById('registerbtn');
-    register.onclick = alert('Could not register the user');
-        /*function () {
+    /*var register = document.getElementById('registerbtn');
+    register.onclick = alert('Could not register the user');*/
+    function myFunction () {
         // Create a request object
         var request = new XMLHttpRequest();
         
@@ -254,7 +254,7 @@ function loadLoginForm () {
                   register.value = 'Register';
               }
           }
-        };*/
+        };
         
         // Make the request
         var username = document.getElementById('username').value;
