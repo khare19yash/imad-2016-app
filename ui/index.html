@@ -1,82 +1,64 @@
-<!doctype html>
 <html>
+
 <head>
-    <title>Yash's Blog</title>
-    
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" type="text/css" href="/ui/style.css" >
-<link href="https://fonts.googleapis.com/css?family=Lobster|Six+Caps" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+        Home
+    </title>
+    <link rel="stylesheet" type="text/css" href="/ui/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Add smooth scrolling to all links
+            $("a").on('click', function(event) {
 
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
 
-      // Store hash
-      var hash = this.hash;
+                    // Store hash
+                    var hash = this.hash;
 
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 600, function() {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
    
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-});
-</script>
 </head>
-<body>
-   
-   <div class="container">
-    <div id="navbar">
-        <ul id="menu">
-            <li class="nav"><a class="anchor" href="/">HOME</a></li>
-            <li class="nav"><a class="anchor" href="ui/articles.html">Articles</a></li>
-        <li class="nav"><a class="anchor" href="#loginpage">LOGIN/Register</a></li>
-        <!--<li class="nav"><a class="anchor" href="#loginpage">Contact Me</a></li>-->
-        </ul>
-        </div>
-        <img id="photo" src="/ui/myphoto.jpg" />
-        <div id="aboutme-l"><p id="detail">Name: YASH KHARE</p>
-                            <p id="detail">Age: 20years</p>
-                            <p id="detail">Gender: Male</p>
-                            <p id="detail">Hometown:SATNA,M.P.</p>
-                            <h4 id="detail">CONTACT ME:</h4>
-  <p id="detail">Ph. +919406728839</p>
-  <p id="detail">Email: khareyash19@gmail.com</p>
-  <p id="detail"><a class="anchor" href="">Facebook</a></p>
-                            
-        </div>
-        <div id="aboutme-r"><h2 id="aboutme">About Me</h2><p id="aboutdetail"><strong>"Try not to become a man of success, but rather try to become a man of value"</strong></p><br>
-        <p id="mydetail">
-  <strong> I am Shubham Singh, currently pursuing B.Tech in Electronics & Communication Engineering at IIIT Bhubaneswar. A sports enthusiast who loves to play several outdoor games and always curious about the latest updates in the Indian sports. Loves to play high end computer games and watching movies, curious about the latest tech. updates.</strong>
-        </p>
-            <div id="cv"><a class="anchor" href="https://drive.google.com/open?id=0B_gE-PfcgXA6eUlldTd3SkhSTzg" target="blank">My CV</a></div>
-        </div>
-        </div>
-   <div id="loginpage">
-   <div id="login">
-       <h3>Login, If already registered!</h3>
-   <span>USERNAME: </span><input type="text" id="username"> <br><br>
-   <span>PASSWORD:  </span><input type="password" id="password"> <br><br>
-<span><input type="submit" id="loginbtn" value="Login"></span><br><br><span><input type="submit" id="registerbtn" value="Register"></span><br><br><br><br><br>
-</div>
-<!--<h2 id="contact">CONTACT ADMIN:</h2>
-  <p id="contact">Ph. +919583945353</p>
-  <p id="contact">Email: shubhamsinghoriginal@gmail.com</p>
-  <p id="contact"><a href="http://www.facebook.com/shubhamsingh10/">Facebook</a></p>-->
-  </div>
-   <script type="text/javascript" src="/ui/main.js"></script>
-</body>
-</html>
 
+<body>
+    <div class="container">
+        <div id="navbar">
+            <ul id="menulist">
+                <li class="nav"><a class="anchor" href="/">Home</a></li>
+                <li class="nav"><a class="anchor" href="#">MyBlog</a></li>
+                <li class="nav"><a class="anchor" href="#contactme">Contact Me</a></li>
+                <li class="nav"><a class="anchor" href="#loginpage">Login/Register</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="loginpage">
+
+        <div id="loginwindow">
+            <span>Username :</span><input type="text" id="username"><br> <br>
+            <span>Password :</span><input type="password" id="password"><br><br>
+            <span><input type="submit" value="Login" id="loginbtn" >      <span><input type="submit" value="Register" id="registerbtn"></span>
+        </div>
+        <img id="loginimg" src="/ui/log.jpg">
+    </div>
+    <div id="contactme">
+    </div>
+     <script type="text/javascript" src="/ui/main.js"></script>
+</body>
+
+</html>
