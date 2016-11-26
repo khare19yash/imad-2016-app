@@ -9,8 +9,8 @@ var session = require('express-session');
 
 //remember to change the password field before deploying
 var config ={
-  user:'subway19',
-  database:'subway19',
+  user:'khare19yash',
+  database:'khare19yash',
   host:'db.imad.hasura-app.io',
   port: '5432',
   password: process.env.DB_PASSWORD
