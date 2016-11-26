@@ -181,18 +181,3 @@ request.open('GET','http://localhost:8080/submit_name?name='+name,true);
 request.send(null);
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
