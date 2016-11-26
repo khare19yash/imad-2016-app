@@ -1,44 +1,8 @@
-
-function changediv(user_name)
-{
-    var changedivtemp='<strong>Hi '+user_name+' !</strong>';
-    document.getElementById('userinfo').innerHTML=changedivtemp;
-    
-}
-
-
-
-function loadArticles () {
-        // Check if the user is already logged in
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
-        if (request.readyState === XMLHttpRequest.DONE) {
-            var articles = document.getElementById('articlelist');
-            if (request.status === 200) {
-                var content = '<ul class="ulist">';
-                var articleData = JSON.parse(this.responseText);
-                for (var i=0; i< articleData.length; i++) {
-                    content += `<li class="list">
-                    <a class="listanchor" href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
-                    (${articleData[i].date.split('T')[0]})</li>`;
-                }
-                content += "</ul>";
-                articles.innerHTML = content;
-            } else {
-                articles.innerHTML('Oops! Could not load all articles!');
-            }
-        }
-    };
-    
-    request.open('GET', '/get-articles', true);
-    request.send(null);
-}
-loadArticles();
 var currentArticleTitle = window.location.pathname.split('/')[2];
 
 function loadCommentForm () {
     var commentFormHtml = `
-        <h5>Submit a comment (You have to login before submitting a comment)</h5>
+        <h5>Submit a comment</h5>
         <textarea id="comment_text" rows="5" cols="100" placeholder="Enter your comment here..."></textarea>
         <br/>
         <input type="submit" id="submit" value="Submit" />
@@ -77,14 +41,30 @@ function loadCommentForm () {
     };
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function loadLogin () {
     // Check if the user is already logged in
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
-                
-                changediv(this.responseText);
+                loadCommentForm(this.responseText);
             }
         }
     };
@@ -92,6 +72,11 @@ function loadLogin () {
     request.open('GET', '/check-login', true);
     request.send(null);
 }
+
+
+
+
+
 
 function escapeHTML (text)
 {
@@ -101,6 +86,8 @@ function escapeHTML (text)
     return $div.innerHTML;
 }
 
+
+
 function loadComments () {
         // Check if the user is already logged in
     var request = new XMLHttpRequest();
@@ -108,17 +95,28 @@ function loadComments () {
         if (request.readyState === XMLHttpRequest.DONE) {
             var comments = document.getElementById('comments');
             if (request.status === 200) {
-                var content = '';
+                var content = '<ul class="demo-list-three mdl-list" style="width: 650px">';
                 var commentsData = JSON.parse(this.responseText);
                 for (var i=0; i< commentsData.length; i++) {
                     var time = new Date(commentsData[i].timestamp);
-                    content += `<div class="comment">
-                        <p>${escapeHTML(commentsData[i].comment)}</p>
-                        <div class="commenter">
-                            ${commentsData[i].username} - ${time.toLocaleTimeString()} on ${time.toLocaleDateString()} 
-                        </div>
-                    </div>`;
+        
+
+                    content += `
+                     <li class="mdl-list__item mdl-list__item--three-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-avatar">person</i>
+                            <span>${escapeHTML(commentsData[i].username)}</span>
+                            <span class="mdl-list__item-text-body">
+                                ${escapeHTML(commentsData[i].comment)} - ${time.toLocaleTimeString()} on ${time.toLocaleDateString()}
+                            </span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                        </span>
+                    </li>
+                    `
                 }
+                content += "</ul>"
                 comments.innerHTML = content;
             } else {
                 comments.innerHTML('Oops! Could not load comments!');
@@ -131,7 +129,7 @@ function loadComments () {
 }
 
 
-// The first thing to do is to check if the user is logged in!
+
 loadLogin();
+
 loadComments();
-loadCommentForm();
