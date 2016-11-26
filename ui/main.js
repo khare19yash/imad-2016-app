@@ -248,7 +248,7 @@ function loadLoginForm () {
         register.value = 'Registering...' ;
     
     }
-}
+};
 function loadLoggedInUser (username) {
     var user_name=username;
     
