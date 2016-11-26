@@ -9,8 +9,8 @@ function loadArticles () {
                 var articleData = JSON.parse(this.responseText);
                 for (var i=0; i< articleData.length; i++) {
                     content += `<li>
-                    <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
-                    (${articleData[i].date.split('T')[0]})</li><br><br><br>`;
+                    <a class="editlist" href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
+                    (${articleData[i].date.split('T')[0]})</li>`;
                 }
                 content += "</ul>";
                 articles.innerHTML = content;
@@ -29,7 +29,7 @@ var currentArticleTitle = window.location.pathname.split('/')[2];
 function loadCommentForm () {
     var commentFormHtml = `
         <h5>Submit a comment</h5>
-        <textarea id="comment_text" rows="5" cols="100" placeholder="Comment after Login/Register..."></textarea>
+        <textarea id="comment_text" rows="5" cols="100" placeholder="Enter your comment here..."></textarea>
         <br/>
         <input type="submit" id="submit" value="Submit" />
         <br/>
@@ -62,7 +62,7 @@ function loadCommentForm () {
         request.open('POST', '/submit-comment/' + currentArticleTitle, true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({comment: comment}));  
-        submit.value = 'Wait...';
+        submit.value = 'Submitting...';
         
     };
 }
@@ -123,4 +123,3 @@ function loadComments () {
 // The first thing to do is to check if the user is logged in!
 loadLogin();
 loadComments();
-loadCommentForm();
