@@ -1,9 +1,35 @@
+function loadArticles () {
+        // Check if the user is already logged in
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            var articles = document.getElementById('list');
+            if (request.status === 200) {
+                var content = '<ul>';
+                var articleData = JSON.parse(this.responseText);
+                for (var i=0; i< articleData.length; i++) {
+                    content += `<li>
+                    <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
+                    (${articleData[i].date.split('T')[0]})</li><br><br><br>`;
+                }
+                content += "</ul>";
+                articles.innerHTML = content;
+            } else {
+                articles.innerHTML('Oops! Could not load all articles!');
+            }
+        }
+    };
+    
+    request.open('GET', '/get-articles', true);
+    request.send(null);
+}
+loadArticles();
 var currentArticleTitle = window.location.pathname.split('/')[2];
 
 function loadCommentForm () {
     var commentFormHtml = `
         <h5>Submit a comment</h5>
-        <textarea id="comment_text" rows="5" cols="100" placeholder="Enter your comment here..."></textarea>
+        <textarea id="comment_text" rows="5" cols="100" placeholder="Comment after Login/Register..."></textarea>
         <br/>
         <input type="submit" id="submit" value="Submit" />
         <br/>
@@ -36,27 +62,10 @@ function loadCommentForm () {
         request.open('POST', '/submit-comment/' + currentArticleTitle, true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({comment: comment}));  
-        submit.value = 'Submitting...';
+        submit.value = 'Wait...';
         
     };
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function loadLogin () {
     // Check if the user is already logged in
@@ -73,11 +82,6 @@ function loadLogin () {
     request.send(null);
 }
 
-
-
-
-
-
 function escapeHTML (text)
 {
     var $text = document.createTextNode(text);
@@ -86,8 +90,6 @@ function escapeHTML (text)
     return $div.innerHTML;
 }
 
-
-
 function loadComments () {
         // Check if the user is already logged in
     var request = new XMLHttpRequest();
@@ -95,28 +97,17 @@ function loadComments () {
         if (request.readyState === XMLHttpRequest.DONE) {
             var comments = document.getElementById('comments');
             if (request.status === 200) {
-                var content = '<ul class="demo-list-three mdl-list" style="width: 650px">';
+                var content = '';
                 var commentsData = JSON.parse(this.responseText);
                 for (var i=0; i< commentsData.length; i++) {
                     var time = new Date(commentsData[i].timestamp);
-        
-
-                    content += `
-                     <li class="mdl-list__item mdl-list__item--three-line">
-                        <span class="mdl-list__item-primary-content">
-                            <i class="material-icons mdl-list__item-avatar">person</i>
-                            <span>${escapeHTML(commentsData[i].username)}</span>
-                            <span class="mdl-list__item-text-body">
-                                ${escapeHTML(commentsData[i].comment)} - ${time.toLocaleTimeString()} on ${time.toLocaleDateString()}
-                            </span>
-                        </span>
-                        <span class="mdl-list__item-secondary-content">
-                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
-                        </span>
-                    </li>
-                    `
+                    content += `<div class="comment">
+                        <p>${escapeHTML(commentsData[i].comment)}</p>
+                        <div class="commenter">
+                            ${commentsData[i].username} - ${time.toLocaleTimeString()} on ${time.toLocaleDateString()} 
+                        </div>
+                    </div>`;
                 }
-                content += "</ul>"
                 comments.innerHTML = content;
             } else {
                 comments.innerHTML('Oops! Could not load comments!');
@@ -129,7 +120,7 @@ function loadComments () {
 }
 
 
-
+// The first thing to do is to check if the user is logged in!
 loadLogin();
-
 loadComments();
+loadCommentForm();
