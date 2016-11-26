@@ -5,6 +5,7 @@ app.use(bodyParser.json());
 var morgan = require('morgan');
 app.use(morgan('combined'));
 var crypto = require('crypto');
+var session = require('express-session');
 
 var http = require('http').Server(app);
 
