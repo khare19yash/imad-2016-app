@@ -239,8 +239,9 @@ function loadLoginForm () {
     /*var register = document.getElementById('registerbtn');
     register.onclick = alert('Could not register the user');*/
     function myFunction () {
+        alert("hi");
         // Create a request object
-        var request = new XMLHttpRequest();
+        /*var request = new XMLHttpRequest();
         
         // Capture the response and store it in a variable
         request.onreadystatechange = function () {
@@ -253,7 +254,7 @@ function loadLoginForm () {
                   alert('Could not register the user');
                   register.value = 'Register';
               }
-          }
+          }*/
         };
         
         // Make the request
