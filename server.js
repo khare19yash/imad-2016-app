@@ -1,7 +1,10 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
 var morgan = require('morgan');
 app.use(morgan('combined'));
+var crypto = require('crypto');
 
 var http = require('http').Server(app);
 
@@ -15,9 +18,9 @@ var Pool = require('pg').Pool;
 //DATABASE CONFIGURATION
 var config = {
   host: 'db.imad.hasura-app.io',
-  user: 'khare19yash',
+  user: 'itsinayats',
   password: process.env.DB_PASSWORD,
-  database: 'khare19yash',
+  database: 'itsinayats',
   port:'5432'
 };
 
@@ -140,42 +143,10 @@ res.sendFile(path.join(__dirname, 'ui/images' , 'gl.jpg'));
 });
 
 
-/*
-
-//app.get('/blog', function (req, res) {
-app.get('/articles/:articleName', function (req, res) {
-// var articleName=req.params.articleName;
-//pool.query("Select * from articles,users where title='" + req.params.articleName + "'", function(err,result){
-pool.query("select article_tags.tag,articles.title,articles.content,articles.category,articles.heading, articles,date,users.name from articles,article_tags,users where article_tags.article_id=articles.id AND articles.title='"+ req.params.articleName +"' AND articles.author_id=users.id  order by time DESC",function(err,result){
-    
-
-    
-    
-    if(err){
-          res.status(500).send(err.toString()) ;
-          }
-     else{
-            if(result.rows.length===0)
-             {
-                res.status(400).send('ARTICLE NOT FOUND');
-             }
-                 else{
-                
-                 res.send(JSON.stringify(result.rows));
-                     
-                 }
-             }
-    
-});
-});
- 
-
-*/
-
 
 //getting categories
 app.get('/get-categories', function (req, res) {
-   pool.query('SELECT * FROM category', function (err, result) {
+   pool.query('select * from category', function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
@@ -186,10 +157,10 @@ app.get('/get-categories', function (req, res) {
 
 
 
-
-//fetching recent article on blog home page
-app.get('/get-blog-data',function(req,res){
-    pool.query("select articles.title,articles.content,articles.category,articles.heading, articles.time,users.name from articles,article_tags,users where articles.author_id=users.id order by time DESC",function(err,result){
+//getting articles
+app.post('/getArticles',function(req,res){
+    var cat=req.body.category;
+    pool.query("select * from articles where category=$1",[cat],function(err,result){
          if(err){
           res.status(500).send(err.toString()) ;
           }
@@ -208,9 +179,118 @@ app.get('/get-blog-data',function(req,res){
     
 });
 
-//get-tags
 
- 
+
+
+//getting Tags
+app.post('/getTags',function(req,res){
+    var id=req.body.id;
+    pool.query("select *from article_tags where article_id=$1",[id],function(err,result){
+         if(err){
+          res.status(500).send(err.toString()) ;
+          }
+     else{
+            if(result.rows.length===0)
+             {
+                res.status(400).send('ARTICLE NOT FOUND');
+             }
+                 else{
+                   res.send(JSON.stringify(result.rows));
+                     }
+             }
+        
+    });
+    
+});
+
+
+
+
+//get author
+app.post('/getAuthor',function(req,res){
+    var ai=req.body.author_id;
+    pool.query("select * from users where id=$1",[ai],function(err,result){
+         if(err){
+          res.status(500).send(err.toString()) ;
+          }
+     else{
+            if(result.rows.length===0)
+             {
+                res.status(400).send('ARTICLE NOT FOUND');
+             }
+                 else{
+                   res.send(JSON.stringify(result.rows));
+                     }
+             }
+        
+    });
+    
+});
+
+
+
+
+
+
+
+
+
+
+
+
+//fetching recent article on blog home page
+app.get('/get-blog-data',function(req,res){
+    pool.query("select article_tags.tag, articles.title,articles.content,articles.category,articles.heading, articles.time,users.name FROM articles,article_tags,users where articles.author_id=users.id AND articles.id=article_tags.article_id AND articles.id=(select MAX(id) from articles) order by time DESC",function(err,result){
+         if(err){
+          res.status(500).send(err.toString()) ;
+          }
+     else{
+            if(result.rows.length===0)
+             {
+                res.status(400).send('ARTICLE NOT FOUND');
+             }
+                 else{
+                   res.send(JSON.stringify(result.rows));
+                     
+                 }
+             }
+        
+    });
+    
+});
+
+
+
+function hash (input, salt) {
+    var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
+    return ["pbkdf2", "10000", salt, hashed.toString('hex')].join('$');
+}
+
+
+app.get('/hash/:input', function(req, res) {
+   var hashedString = hash(req.params.input, 'this-is-some-random-string');
+   res.send(hashedString);
+});
+
+app.post('/create-user', function (req, res) {
+  
+   var email=req.body.email;
+   var name = req.body.name;
+   var password = req.body.password;
+   var salt = crypto.randomBytes(128).toString('hex');
+   var dbString = hash(password, salt);
+   pool.query('INSERT INTO users(name,email,password) VALUES ($1, $2, $3)', [name,email, dbString], function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      } else {
+          res.send('User successfully created: ' + username);
+      }
+   });
+});
+
+
+
+
 
 
 
