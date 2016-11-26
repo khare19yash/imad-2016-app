@@ -29,7 +29,7 @@ body {
 
 .container {
     background-color: darkgray;
-    background-image: url("/ui/myimg.jpg");
+    background-image: url("https://i.ytimg.com/vi/d-zKJCKsoWw/maxresdefault.jpg");
     background-size: cover;
     height: 850px;
     width: 100%;
