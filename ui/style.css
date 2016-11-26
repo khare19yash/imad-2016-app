@@ -1,170 +1,183 @@
-#navbar
-{
-margin-top: -14px;
-height:50px;
-width:100%;
-text-align: center;
-position:fixed;
-margin-left:35px;
+#navbar {
+    margin-top: -15px;
+    margin-left: -8px;
+    margin-right: 0px;
+    width: 100%;
+    height: 90px;
+    padding-top: 15px;
 }
-#menu
-{
-    padding-top: 10px;
-     font-family: 'Six Caps', sans-serif;
-font-family: 'Lobster', cursive;
-font-size:larger;
-    text-align: center;
-}
-.nav
-{
+
+#newlist {
+    padding-left: 190px;
+    margin-top: -5px;
     display: inline;
-    margin-left: 25px;
-    font-size: larger;
-    text-decoration: overline;
-        
-
-}
-.container
-{
-background-image: url("/ui/body.jpg");
-width:100%;
-height:700px;
-/*background-size: cover;*/
-background-repeat: no-repeat;
-margin-top:-20px;
-padding-top:5px;
-}
-body{
-    width:100%;
-    margin-left:-4px;
-    margin-right:-4px;
-    margin-top:-4px;
-}
-.nav:hover{
-    text-decoration: underline;
-}
-.anchor{
-    color: black;
-}
-#loginpage
-{
-    background-image: url("/ui/31_white_abstract.jpg");
-    width:auto;
-height:475px;
-/*background-size: cover;*/
-text-align: center;
-padding-top: 150px;
-
+    position: fixed;
+    list-style-type: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
 }
 
-#loginbtn
-{
-    background-color: none;
-    border-radius: 5px;
-     font-family: 'Six Caps', sans-serif;
-font-family: 'Lobster', cursive;
-    font-size: larger;
-    text-decoration: overline;
+.nav {
+    display: inline;
+    margin-left: 20px;
 }
-#loginbtn:hover{
-    text-decoration: underline;
-    background-color: black;
-    color:antiquewhite;
+
+.nav:hover {
+    text-decoration: underline overline;
+    font-size: 60px;
 }
-#contact{
-     font-family: 'Six Caps', sans-serif;
-font-family: 'Lobster', cursive;
-    font-size: larger;
-    text-decoration: underline;
+
+.container {
+    background-image: url("/ui/trees.jpg");
+    background-size: cover;
+    height: 700px;
+    width: 101.35%;
+    background-repeat: no-repeat;
+    margin-left: -10px;
+}
+
+#loginpage {
+    background-image: url("/ui/free-brown-background-wallpaper-1.jpg");
+    background-size: cover;
+    height: 700px;
+    width: 101.35%;
+    background-repeat: no-repeat;
+    margin-left: -10px;
+}
+
+#contactpage {
+    background-image: url("/ui/Brown-Backgrounds.jpg");
+    background-size: cover;
+    height: 700px;
+    width: 101.35%;
+    background-repeat: no-repeat;
+    margin-left: -10px;
+}
+
+#loginwindow {
+    margin-left: 420px;
+    margin-top: 220px;
+    background-color: burlywood;
+    height: 260px;
+    width: 500px;
+    border: solid thick black;
+    position: absolute;
     text-align: center;
+    font-family: sans-serif;
+    font-size: 20px;
+    border-bottom-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 40px;
 }
-#registerbtn
+
+#contactinfo {
+    margin-left: 225px;
+    margin-top: 210px;
+    background-color: burlywood;
+    height: 300px;
+    width: 500px;
+    border: solid thick black;
+    position: absolute;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 20px;
+    border-bottom-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+    border-top-left-radius: 60px;
+}
+
+#contactimg {
+    margin-left: 820px;
+    margin-top: 210px;
+    height: 300px;
+    width: 300px;
+    border: solid thick black;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+.anchor {
+    color: black;
+    text-decoration: none;
+}
+
+#loginbtn {
+    background-color: lightslategrey;
+    font-size: 20px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+#registerbtn {
+    background-color: lightslategray;
+    font-size: 20px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+#loginbtn:hover {
+    background-color: linen;
+    font-size: 30px;
+    height: 50px;
+    width: 150px;
+}
+
+#registerbtn:hover {
+    background-color: linen;
+    font-size: 30px;
+    height: 50px;
+    width: 150px;
+}
+#aboutme {
+    margin-left: 700px;
+    margin-top: 15px;
+    border: solid thin black;
+    height: 450px;
+    width: 550px;
+    position: absolute;
+    text-align: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 10px;
+    font-family: 'Cabin', sans-serif;
+}
+#abouttag
 {
-    background-color: none;
-    border-radius: 5px;
-     font-family: 'Six Caps', sans-serif;
-font-family: 'Lobster', cursive;
-    font-size: larger;
-    text-decoration: overline;
+    margin-left: 30px;
+    margin-top: -8px;
 }
-#registerbtn:hover{
-    text-decoration: underline;
-    background-color: black;
-    color:antiquewhite;
+#quote
+{
+    margin-left: 30px;
+    font-family: 'Amatic SC', cursive;
+    font-size: 40px;
 }
-#aboutme-r{
- height:650px;
- width:75.45%;
-margin-top: -875px;
- margin-left: 210px;
-position:absolute;
-  
-font-family: 'Six Caps', sans-serif;
-font-family: 'Lobster', cursive;
-
+#myphoto
+{
+    margin-left: 60px;
+    margin-top: 60px;
+    height: 360px;
+    width: 480px;
+    border: solid thick black;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
-#aboutme-l{
-   height:700px;
-     width:230px;
-position:relative;
-     /*background-color: whitesmoke;*/
-     /*margin-top: 65px;
-     margin-left: -25px;*/
- text-align: center;
-     font-family: 'Six Caps', sans-serif;
-     font-family: 'Lobster', cursive;
-     margin-top:-10px;
-     }
-   #detail
-   {
-       padding-top:10px;
-       
-   }
-   #photo
-   {
-       border:solid thick;
-       border-radius:20px;
-       margin-left: 10px;
-       margin-top: 45px;
-    width:190px;
-    height:170px;
-   }
-   #aboutme{
-      margin-top:60px;
-      text-align:center;
-      margin-left:-7px;
-   }
-   #aboutdetail{
-text-align: center;
-       font-size:25px;
-          font-family: 'Bad Script', cursive;
-width:inherit: max-content;
-margin-left:20px;
-color:black;
-margin-top:60px;
-   }
-   #mydetail{
-       
-       font-family: 'Bad Script', cursive;
-       font-size: 20px;
-       width:inherit: max-content;
-      margin-left:60px;
-      color:black;
-      margin-top:50px;
-   }
-#cv
-  {
-      text-decoration: overline;
-      margin-left: 400px;
-      height:20px;
-      width:70px;
-      text-align: center;
-      background-color: darkgrey;
-      border: 10px,thick,black;
-  }
-  #cv:hover{
-    text-decoration: underline;
-    
-    color:antiquewhite;
-  }
-
+#knowme
+{   
+    margin-top: -30px;
+    margin-left:200px;
+}
