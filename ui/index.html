@@ -1,31 +1,28 @@
+<!doctype html>
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>
-        Home
-    </title>
-    <link rel="stylesheet" type="text/css" href="/ui/style.css">
+    <title>Home</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="ui/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <script>
         $(document).ready(function() {
             // Add smooth scrolling to all links
             $("a").on('click', function(event) {
-
                 // Make sure this.hash has a value before overriding default behavior
                 if (this.hash !== "") {
                     // Prevent default anchor click behavior
                     event.preventDefault();
-
                     // Store hash
                     var hash = this.hash;
-
                     // Using jQuery's animate() method to add smooth page scroll
                     // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
                     $('html, body').animate({
                         scrollTop: $(hash).offset().top
-                    }, 600, function() {
-
+                    }, 800, function() {
                         // Add hash (#) to URL when done scrolling (default click behavior)
                         window.location.hash = hash;
                     });
@@ -33,32 +30,89 @@
             });
         });
     </script>
-   
+    <script>
+        $(document).ready(function() {
+            // Add smooth scrolling to all links
+            $("a").on('click', function(event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+                    // Store hash
+                    var hash = this.hash;
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function() {
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="/ui/style.css">
 </head>
 
 <body>
     <div class="container">
-        <div id="navbar">
-            <ul id="menulist">
-                <li class="nav"><a class="anchor" href="/">Home</a></li>
-                <li class="nav"><a class="anchor" href="#">MyBlog</a></li>
-                <li class="nav"><a class="anchor" href="#contactme">Contact Me</a></li>
-                <li class="nav"><a class="anchor" href="#loginpage">Login/Register</a></li>
-            </ul>
+        <div id="navbar" style="text-align:left-center">
+            <ul id="newlist">
+                <li class="nav"><a class="anchor" href="#">Home</a></li>
+	<li class="nav"><a class="anchor" href="ui/myarticle.html">Articles</a></li>
+	<li class="nav"><a class="anchor" href='#loginpage'>Login/Register</a></li>
+	<li class="nav"><a class="anchor" href='#contactpage'>Contact Me</a></li>
+	</ul>
+	</div>
+	 <div id="home">
+            
+        <div id="aboutme">
+          <div id="knowme"> <h2>Know Me!</h2> </div>
+            <p>
+                <strong>Name :   </strong>Toshit Som<br>
+                <strong>Age :    </strong>19 y.o.<br>
+                <strong>Gender : </strong>Male<br>
+                <strong>Hometown : </strong>Noida<br><br>
+                <strong><u>About Me</u> :</strong>
+                <p id="abouttag">
+                    An Engineering Student from <strong>IIIT Bhubaneswar</strong><br>(B.Tech, Batch of 2019).<br>
+                    A tech-geek who loves to write code from scratch<br>
+                    A musician, percussionist and a dreamer!<br>
+                    A photographer by hobby who loves to capture the beauty of the world through the lens<br>
+                    <p id="quote">
+                     <strong>"If you give up on your dreams, what's left?"</strong>
+                    </p>
+                </p>
+            </p>
         </div>
     </div>
-    <div id="loginpage">
+               <img id="myphoto" src="ui/home.jpg">
+	</div>
+   
+		<div id="loginpage">
+			<div id="loginwindow">
+			<h2> Login/Register </h2>
+			<p>(Enter Details then press Login/Register)</p>
+				<span>Username :</span><input type="text" id="username"><br><br>
+				<span>Password :</span><input type="password" id="password"><br><br>
+				<span><input type="submit" value="Login" id="loginbtn"></span>        <span><input type="submit" value="Register" id="registerbtn"></span>
+				</div>
+				</div>
+				
+				<div id="contactpage">
+					<div id="contactinfo">
+						<h2>To Get in Touch..</h2>
+						<h3>E-mail: tsom.97@gmail.com</h3>
+						<h3>Phone: +91 9910161548</h3>
+						<span><a href="https://www.facebook.com/toshit.som" target="_blank"><h3>Facebook</h3></a></span> 
+	 <span><a href="https://drive.google.com/open?id=0B9-LOZo61vGoQkZVVE90OTlPYWc" target="_blank"><h3>Curriculum Vitae</h3></a></span>
+				</div>
+									 <img id="contactimg" src="ui/me.jpg" >
+									 </div>
 
-        <div id="loginwindow">
-            <span>Username :</span><input type="text" id="username"><br> <br>
-            <span>Password :</span><input type="password" id="password"><br><br>
-            <span><input type="submit" value="Login" id="loginbtn" >      <span><input type="submit" value="Register" id="registerbtn"></span>
-        </div>
-        <img id="loginimg" src="/ui/log.jpg">
-    </div>
-    <div id="contactme">
-    </div>
-     <script type="text/javascript" src="/ui/main.js"></script>
-</body>
 
+<script type="text/javascript" src="ui/main.js"></script>
+	</body>
 </html>
