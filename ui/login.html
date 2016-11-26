@@ -1,1 +1,139 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/ui/login.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.deep_purple-blue.min.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+
+
+    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <script type="text/javascript" src="/ui/login.js"> </script>
+
+
+
+
+
+</head>
+<body>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+       <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+           <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                <a class="mdl-navigation__link" href="/"><h6>Home</h6></a>
+                <a class="mdl-navigation__link" href="/login"><h6>Blog</h6></a>
+                <a class="mdl-navigation__link" href="/publish-article"><h6>Publish Article</h6></a>
+                <a class="mdl-navigation__link" href="/readroom"><h6>Read Room</h6></a>
+            </nav>
+        </div>
+    </header>
+    
+        <br>
+        <br>
+        <br>
+        <br>
+    <main class="mdl-layout__content">
+        <div class="mdl-grid">
+
+        
+        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--4dp" id="signup-form">
+
+            <div class="mdl-card__supporting-text">
+                <form action="#" class="">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" id="username">
+                        <label class="mdl-textfield__label" for="username">Name...</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="password" id="password">
+                        <label class="mdl-textfield__label" for="password">Password...</label>
+                    </div>
+                    <center>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" id="register_btn" onclick="userSignUp()">
+                            Sign Up
+                        </button>
+                    </center>
+                </form>
+            </div>
+        </div>
+
+        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--4dp" id="login-form">
+
+            <div class="mdl-card__supporting-text">
+                <form action="#" class="">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="logusername">
+                        <label class="mdl-textfield__label" for="logusername">Name...</label>
+                        <!--<span class="mdl-textfield__error">Letters and spaces only</span> -->
+                    </div>
+                
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="password" id="logpassword">
+                        <label class="mdl-textfield__label" for="logpassword">Password...</label>
+                    </div>
+                    <br>
+                    <center>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" id="login_btn" onclick="userLogin()">
+                            Login
+                        </button>
+                    </center>
+                     <h6>Not a member? Sign Up!</h6>
+                </form>
+            </div>
+        </div> 
+        <div class="mdl-cell mdl-cell--4-col" id="login_area">
+            
+        </div>
+    
+
+        </div>
+        <center>
+            <div id="articles">
+            </div>
+        </center>
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+        <footer class="mdl-mini-footer">
+          <div class="mdl-mini-footer__left-section">
+            <div class="mdl-logo">
+              <h6>Application developed as part of IMAD </h6>
+          </div>
+      </div>
+
+      <div class="mdl-mini-footer__right-section">
+
+        <ul class="mdl-mini-footer__link-list">
+            <li> <h5><a href="https://www.hackerearth.com/@sumant2" target="_blank"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></h5></li>
+
+            <li> <h5><a href="https://www.hackerearth.com/@sumant2" target="_blank"><i class="fa fa-header fa-lg"></i></a></h5></li>
+            <li><h5><a href="https://github.com/Subway19" target="_blank"><i class="fa fa-github fa-lg"></i></a></h5></li>
+            <li>  <h5><a href="https://www.facebook.com/sumantbagade19" target="_blank"><i class="fa fa-facebook fa-lg"></i></a></h5>
+            </li>
+        </ul>
+
+    </div>
+</footer>
+</main>
+</div>
+</body>
+</html>
 
