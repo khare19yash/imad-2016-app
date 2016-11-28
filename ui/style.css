@@ -1,3 +1,12 @@
+ #myimg {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    margin-top: 270px;
+    margin-left: 800px;
+     border: 1px solid black;
+}
+ 
  
 #leftfloat {
     height: 100%;
